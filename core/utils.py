@@ -90,8 +90,7 @@ class utils:
 		f.write(f"possible xss :{url}\n")
 
 	def notifyIfFileMofidy():
-		web_hook = "https://discord.com/api/webhooks/795898237843537920/azY5CzIJ4ECn8Bzut3fdgY2euSrCzc7wPT5-ORkRULVrpFwG_WlQx6qUZlfminhDU5DU"
-		#webhook_urls = [web_hook]
+		web_hook = ""
 		webhook = DiscordWebhook(url=web_hook, content=f'[+] Possible XSS reported please check found.txt')
 		with open("output/found.txt", "rb") as f:
 			webhook.add_file(file=f.read(), filename='found.txt')

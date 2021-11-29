@@ -10,21 +10,6 @@ import concurrent.futures
 from multiprocessing import Process
 
 if __name__ == '__main__':
-	# SSTI : https://ac0d1f571f1a22ba81b8119800b600b4.web-security-academy.net
-	# XSS  : http://testphp.vulnweb.com
-
-	# utils.checkUpdate()
-	# targetUrl = ""
-	# done = []
-	# #MainTarget =  "testTarget.txt" #"targets.txt" #t
-	# while True:
-	# 	target = 'subdomains/subdomain.txt'  #http://testphp.vulnweb.com/' 
-	# 	for subs in open(target, 'r'):
-	# 		url = subs.split('\n')[0]
-	# 		if url not in done:
-	# 			done.append(url)
-	# 			ZapSpider(url).spider()
-
 	done = []
 	j =''
 	while True:
