@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 import concurrent.futures
 from multiprocessing import Process
 
-if __name__ == '__main__':
+def StartScanner():
 	done = []
 	j =''
 	while True:
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 						print(f"[+] Enumerating subdomains : {j}")
 						Scanner(j)
 						target = 'subdomains/subdomain.txt'
-						# #http://testphp.vulnweb.com/' 
+						#http://testphp.vulnweb.com/' 
 						for i in open(target, 'r'):
 							url = i.split('\n')[0]
 							ZapSpider(url).spider()
@@ -40,6 +40,27 @@ if __name__ == '__main__':
 						ZapSpider(url).spider()
 					except:
 						pass
+
+
+def checkServer():
+	try:
+		s = socket.socket()
+		s.connect(('127.0.0.1',8080))
+		started = True
+	except:
+		started = False
+	return started
+
+if __name__ == '__main__':
+	start_zap = False
+	while True:
+		start_zap = checkServer()
+		if start_zap == True:
+			break
+		else:
+			pass
+
+	StartScanner()
 
 
 
